@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function RegisterPage() {
-  redirect('/feed');
+  redirect('/');
 }

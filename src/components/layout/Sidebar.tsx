@@ -48,27 +48,27 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
                 href={item.href}
                 className={`flex items-center px-3 py-3 rounded-lg transition-all duration-200 group ${
                   isActive 
-                    ? "bg-gradient-to-r from-primary/20 to-purple-500/10 text-primary font-medium backdrop-blur-sm" 
+                    ? "bg-gradient-to-r from-green-500/20 to-emerald-500/10 text-green-400 font-medium backdrop-blur-sm shadow-green-glow" 
                     : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
                 }`}
                 title={!isOpen ? item.name : undefined}
               >
                 <div className={`flex items-center justify-center w-6 h-6 ${
                   isActive 
-                    ? "text-primary relative after:absolute after:inset-0 after:bg-primary after:blur-lg after:opacity-20" 
+                    ? "text-green-400 relative after:absolute after:inset-0 after:bg-green-500 after:blur-lg after:opacity-20" 
                     : "text-slate-400 group-hover:text-white"
                 }`}>
                   <Icon className={`h-[18px] w-[18px] transition-transform ${isActive ? "scale-110" : "group-hover:scale-110"}`} />
                 </div>
                 
                 {isOpen && (
-                  <span className={`ml-3 transition-all ${isActive ? "text-primary" : ""}`}>
+                  <span className={`ml-3 transition-all ${isActive ? "text-green-400" : ""}`}>
                     {item.name}
                   </span>
                 )}
                 
                 {isActive && (
-                  <span className={`absolute left-0 w-1 h-8 bg-gradient-to-b from-primary to-purple-500 rounded-r-full ${isOpen ? "opacity-100" : "opacity-0"}`}></span>
+                  <span className={`absolute left-0 w-1 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-r-full ${isOpen ? "opacity-100" : "opacity-0"}`}></span>
                 )}
               </Link>
             </li>
@@ -89,12 +89,12 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
       )}
       
       <aside 
-        className={`bg-gradient-to-b from-slate-900 to-slate-950 text-white transition-all duration-300 ease-in-out fixed h-screen overflow-y-auto z-30
+        className={`bg-gradient-to-b from-deep-ash to-deep-ash-light text-white transition-all duration-300 ease-in-out fixed h-screen overflow-y-auto z-30
           ${isOpen ? "left-0 w-64" : "-left-64 md:left-0 md:w-20"} 
-          shadow-xl border-r border-slate-800/50`}
+          shadow-premium border-r border-deep-ash-lighter`}
       >
         {/* Logo section */}
-        <div className="p-4 flex items-center justify-between h-16 border-b border-slate-700/30 bg-slate-900/50 backdrop-blur-sm">
+        <div className="p-4 flex items-center justify-between h-16 border-b border-deep-ash-lighter bg-deep-ash/50 backdrop-blur-sm">
           <Link href="/" className="flex items-center">
             {isOpen ? (
               <div className="flex items-center">

@@ -54,8 +54,8 @@ const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
     <header
       className={`h-16 px-4 md:px-6 flex items-center justify-between 
         ${isDark 
-          ? 'bg-slate-900 border-b border-slate-700 header-shadow' 
-          : 'bg-white border-b border-slate-200 header-shadow'}
+          ? 'bg-deep-ash-light border-b border-deep-ash-lighter shadow-premium' 
+          : 'bg-white border-b border-ash-white-darker shadow-premium'}
         fixed top-0 left-0 right-0 z-40 transition-all duration-300`}
     >
       <div className="flex items-center">
@@ -69,7 +69,7 @@ const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
         </button>
         
         <div className="hidden md:block">
-          <h1 className="text-lg font-semibold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
             NounLogic
           </h1>
           <p className="text-sm text-muted-foreground">Connect with students worldwide</p>
@@ -77,7 +77,7 @@ const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
         
         {/* Mobile Logo */}
         <div className="md:hidden flex items-center">
-          <div className="w-8 h-8 rounded-md bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center mr-2 shadow-md">
+          <div className="w-8 h-8 rounded-md bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mr-2 shadow-green-glow">
             <span className="text-sm font-bold text-white">NL</span>
           </div>
           <span className="text-lg font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
