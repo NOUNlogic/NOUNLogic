@@ -9,6 +9,7 @@ import { useAppwriteAuth } from "@/lib/appwrite/auth-context";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useCourses, useInstitutions, useAnalytics } from "@/hooks/useDatabase";
+import { useAuthUI } from "@/app/providers";
 
 // Advanced animation variants
 const heroVariants = {
@@ -45,6 +46,7 @@ const pulseAnimation = {
 export default function HomeClient() {
   const { user, loading } = useAppwriteAuth();
   const router = useRouter();
+  const { openAuth } = useAuthUI();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const { scrollY } = useScroll();
@@ -105,10 +107,10 @@ export default function HomeClient() {
 
   // Dynamic achievements based on real data
   const achievements = [
-    { icon: BookOpen, count: `${courses.length || 100}+`, label: "Courses", color: "text-blue-500" },
+    { icon: BookOpen, count: `${courses.length || 100}+`, label: "Courses", color: "text-green-500" },
     { icon: Users, count: "50+", label: "Instructors", color: "text-emerald-500" },
-    { icon: Trophy, count: "20k+", label: "Students", color: "text-orange-500" },
-    { icon: Building, count: `${institutions.length || 15}+`, label: "Institutions", color: "text-purple-500" }
+    { icon: Trophy, count: "20k+", label: "Students", color: "text-teal-500" },
+    { icon: Building, count: `${institutions.length || 15}+`, label: "Institutions", color: "text-green-400" }
   ];
 
   // Featured courses - use real data or fallback to mock data
@@ -150,14 +152,6 @@ export default function HomeClient() {
     }
   ];
 
-  // Dynamic achievements based on real data
-  const achievements = [
-    { icon: BookOpen, count: `${courses.length || 100}+`, label: "Courses", color: "text-blue-500" },
-    { icon: Users, count: "50+", label: "Instructors", color: "text-emerald-500" },
-    { icon: Trophy, count: "20k+", label: "Students", color: "text-orange-500" },
-    { icon: Building, count: `${institutions.length || 15}+`, label: "Institutions", color: "text-purple-500" }
-  ];
-
   useEffect(() => {
     if (!loading && user) {
       router.push('/dashboard');
@@ -182,22 +176,22 @@ export default function HomeClient() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-deep-ash via-deep-ash-light to-deep-ash">
         <div className="relative">
-          <div className="w-20 h-20 border-4 border-blue-200 border-t-blue-500 rounded-full animate-spin"></div>
-          <div className="absolute inset-0 w-20 h-20 border-4 border-transparent border-t-purple-500 rounded-full animate-spin animation-delay-150"></div>
+          <div className="w-20 h-20 border-4 border-green-200 border-t-green-500 rounded-full animate-spin"></div>
+          <div className="absolute inset-0 w-20 h-20 border-4 border-transparent border-t-emerald-500 rounded-full animate-spin animation-delay-150"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-x-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-deep-ash via-deep-ash-light to-deep-ash overflow-x-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
       {/* Floating particles */}
@@ -240,22 +234,22 @@ export default function HomeClient() {
             style={{ x: x, y: y }}
           >
             <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 mb-6"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 mb-6"
               animate={pulseAnimation}
             >
-              <Sparkles className="w-4 h-4 text-blue-400 mr-2" />
-              <span className="text-sm text-blue-300 font-medium">The Future of Learning</span>
+              <Sparkles className="w-4 h-4 text-green-400 mr-2" />
+              <span className="text-sm text-green-300 font-medium">The Future of Learning</span>
             </motion.div>
 
             <motion.h1 
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
               variants={heroVariants}
             >
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Learn
               </span>
               <br />
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                 Web3
               </span>
               <br />
@@ -269,7 +263,7 @@ export default function HomeClient() {
               variants={heroVariants}
             >
               Master blockchain technology, smart contracts, and decentralized applications with 
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold"> industry experts</span>
+              <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text font-semibold"> industry experts</span>
             </motion.p>
             
             <motion.div 
@@ -277,22 +271,22 @@ export default function HomeClient() {
               variants={heroVariants}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link 
-                  href="/register" 
-                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl overflow-hidden shadow-2xl"
+                <button 
+                  onClick={openAuth}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl overflow-hidden shadow-green-glow"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <span className="relative flex items-center justify-center">
                     Start Learning Free
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </span>
-                </Link>
+                </button>
               </motion.div>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   href="/courses" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all shadow-premium"
                 >
                   Explore Courses
                 </Link>
@@ -625,9 +619,9 @@ export default function HomeClient() {
         viewport={{ once: true }}
       >
         {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-blue-900/30 to-purple-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-ash-light/30 via-green-900/20 to-deep-ash-light/30"></div>
         <motion.div 
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)]"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 8, repeat: Infinity }}
         ></motion.div>
@@ -640,7 +634,7 @@ export default function HomeClient() {
             transition={{ duration: 0.6 }}
           >
             Ready to 
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> Transform </span>
+            <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent"> Transform </span>
             Your Future?
           </motion.h2>
           
@@ -660,12 +654,12 @@ export default function HomeClient() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="/register" 
-                className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl overflow-hidden shadow-2xl"
+              <button 
+                onClick={openAuth}
+                className="group relative px-10 py-5 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 text-white font-bold rounded-xl overflow-hidden shadow-green-glow-lg"
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
+                  className="absolute inset-0 bg-gradient-to-r from-green-600 via-emerald-600 to-green-700"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -674,16 +668,16 @@ export default function HomeClient() {
                   Start Learning Free
                   <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-2" />
                 </span>
-              </Link>
+              </button>
             </motion.div>
             
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                href="/login" 
-                className="px-10 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all shadow-lg text-lg"
+              <button 
+                onClick={openAuth}
+                className="px-10 py-5 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all shadow-premium-lg text-lg"
               >
                 Sign In
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </div>

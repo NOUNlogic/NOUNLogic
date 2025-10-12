@@ -35,13 +35,13 @@ const AnimatedGradientButton: React.FC<AnimatedGradientButtonProps> = ({
   // Define variant styles
   const variantStyles = {
     primary: {
-      base: `bg-gradient-${gradientDirection} ${colorFrom || 'from-primary'} ${colorTo || 'to-purple-600'} text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/40`,
+      base: `bg-gradient-${gradientDirection} ${colorFrom || 'from-green-500'} ${colorTo || 'to-emerald-600'} text-white shadow-green-glow hover:shadow-green-glow-lg`,
       border: 'border-transparent',
       hover: 'hover:opacity-95 hover:scale-[1.02]',
       disabled: 'opacity-70 cursor-not-allowed',
     },
     secondary: {
-      base: `bg-gradient-${gradientDirection} ${colorFrom || 'from-gray-700'} ${colorTo || 'to-gray-800'} text-white shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20`,
+      base: `bg-gradient-${gradientDirection} ${colorFrom || 'from-deep-ash-light'} ${colorTo || 'to-deep-ash-lighter'} text-white shadow-premium hover:shadow-premium-lg`,
       border: 'border-transparent',
       hover: 'hover:opacity-95 hover:scale-[1.02]',
       disabled: 'opacity-70 cursor-not-allowed',

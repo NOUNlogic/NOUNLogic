@@ -4,6 +4,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import AuthModal from '@/components/auth/AuthModal';
 import { account, appwriteAuth } from '@/lib/appwrite';
 import { ThemeProvider } from '@/lib/theme';
+import { MuiThemeProvider } from '@/lib/theme/mui-theme';
 
 interface UserProfile {
   name?: string;
@@ -130,12 +131,14 @@ export default function AppProviders({ children }: AppProvidersProps) {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   return (
     <ThemeProvider defaultMode={"system" as any}>
-      <AuthProvider>
-        <AuthUIContext.Provider value={{ isAuthOpen, openAuth: () => setIsAuthOpen(true), closeAuth: () => setIsAuthOpen(false) }}>
-          {children}
-          <AuthModal open={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
-        </AuthUIContext.Provider>
-      </AuthProvider>
+      <MuiThemeProvider>
+        <AuthProvider>
+          <AuthUIContext.Provider value={{ isAuthOpen, openAuth: () => setIsAuthOpen(true), closeAuth: () => setIsAuthOpen(false) }}>
+            {children}
+            <AuthModal open={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+          </AuthUIContext.Provider>
+        </AuthProvider>
+      </MuiThemeProvider>
     </ThemeProvider>
   );
 }

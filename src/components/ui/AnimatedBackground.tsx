@@ -22,14 +22,14 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   children,
   className = '',
   gradientColors = {
-    first: 'from-slate-900',
-    second: 'via-slate-950',
-    third: 'to-slate-900'
+    first: 'from-deep-ash',
+    second: 'via-deep-ash-light',
+    third: 'to-deep-ash'
   },
   orbs = [
-    { size: 'w-80 h-80', position: 'absolute -top-40 -right-40', color: 'bg-gradient-to-br from-purple-500/20 to-blue-600/20', animationDelay: '' },
-    { size: 'w-72 h-72', position: 'absolute top-20 left-20', color: 'bg-gradient-to-r from-blue-500/10 to-cyan-400/10', animationDelay: 'animation-delay-1000' },
-    { size: 'w-96 h-96', position: 'absolute bottom-20 right-40', color: 'bg-gradient-to-tr from-indigo-500/10 to-pink-500/10', animationDelay: 'animation-delay-2000' }
+    { size: 'w-80 h-80', position: 'absolute -top-40 -right-40', color: 'bg-gradient-to-br from-green-500/20 to-emerald-600/20', animationDelay: '' },
+    { size: 'w-72 h-72', position: 'absolute top-20 left-20', color: 'bg-gradient-to-r from-emerald-500/10 to-teal-400/10', animationDelay: 'animation-delay-1000' },
+    { size: 'w-96 h-96', position: 'absolute bottom-20 right-40', color: 'bg-gradient-to-tr from-green-500/10 to-emerald-500/10', animationDelay: 'animation-delay-2000' }
   ],
   showGrid = true,
   gridOpacity = 'opacity-5'

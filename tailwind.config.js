@@ -61,6 +61,23 @@ module.exports = {
           DEFAULT: "hsl(var(--info))",
           foreground: "hsl(var(--info-foreground))",
         },
+        // New ash palette
+        'deep-ash': {
+          DEFAULT: '#1c1c1e',
+          light: '#2c2c2e',
+          lighter: '#38383a',
+        },
+        'ash-white': {
+          DEFAULT: '#f5f5f7',
+          dark: '#e8e8ea',
+          darker: '#d1d1d6',
+        },
+      },
+      boxShadow: {
+        'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2)',
+        'premium-lg': '0 20px 50px -10px rgba(0, 0, 0, 0.4), 0 8px 20px -4px rgba(0, 0, 0, 0.3)',
+        'green-glow': '0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.1)',
+        'green-glow-lg': '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)',
       },
       borderRadius: {
         lg: "var(--radius)",

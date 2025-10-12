@@ -30,8 +30,8 @@ const GlassmorphicCard: React.FC<GlassmorphicCardProps> = ({
   bodyClassName = '',
   footerClassName = '',
   gradientBg = true,
-  gradientFrom = 'from-primary/10',
-  gradientTo = 'to-purple-500/10',
+  gradientFrom = 'from-green-500/10',
+  gradientTo = 'to-emerald-500/10',
   borderColor = 'border-white/20',
   blurIntensity = 'xl',
   shadowIntensity = '2xl',
@@ -48,18 +48,18 @@ const GlassmorphicCard: React.FC<GlassmorphicCardProps> = ({
 
   const shadowClasses = {
     sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg',
-    xl: 'shadow-xl',
-    '2xl': 'shadow-2xl',
+    md: 'shadow-premium',
+    lg: 'shadow-premium',
+    xl: 'shadow-premium-lg',
+    '2xl': 'shadow-premium-lg',
   };
 
   return (
     <div
       className={`
-        relative rounded-xl overflow-hidden ${backgroundOpacity} ${blurClasses[blurIntensity]} 
+        relative rounded-2xl overflow-hidden ${backgroundOpacity} ${blurClasses[blurIntensity]} 
         border ${borderColor} ${shadowClasses[shadowIntensity]} shadow-black/10
-        ${hoverEffect ? 'transition-all duration-300 hover:shadow-black/20 hover:border-white/30' : ''}
+        ${hoverEffect ? 'transition-all duration-300 hover:shadow-green-glow hover:border-white/30' : ''}
         ${className}
       `}
       onClick={onClick}
