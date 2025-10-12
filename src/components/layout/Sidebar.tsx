@@ -98,15 +98,15 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
           <Link href="/" className="flex items-center">
             {isOpen ? (
               <div className="flex items-center">
-                <div className="w-8 h-8 rounded-md bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center mr-2 shadow-lg shadow-purple-500/20">
+                <div className="w-8 h-8 rounded-md bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mr-2 shadow-green-glow">
                   <span className="text-lg font-bold text-white">NL</span>
                 </div>
-                <h1 className="text-lg font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                <h1 className="text-lg font-bold bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">
                   NounLogic
                 </h1>
               </div>
             ) : (
-              <div className="w-10 h-10 rounded-md bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center mx-auto shadow-lg shadow-purple-500/20 hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-md bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto shadow-green-glow hover:scale-105 transition-transform">
                 <span className="text-lg font-bold text-white">NL</span>
               </div>
             )}
@@ -115,12 +115,12 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
           {/* Toggle button visible on desktop */}
           <button 
             onClick={toggleSidebar} 
-            className="hidden md:flex items-center justify-center w-7 h-7 rounded-full bg-slate-800/80 hover:bg-slate-700 transition-colors border border-slate-700/50 shadow-inner"
+            className="hidden md:flex items-center justify-center w-7 h-7 rounded-full bg-deep-ash-lighter hover:bg-deep-ash-light transition-colors border border-deep-ash-lighter shadow-inner"
           >
             {isOpen ? (
-              <ChevronLeft size={14} className="text-blue-100" />
+              <ChevronLeft size={14} className="text-green-200" />
             ) : (
-              <ChevronRight size={14} className="text-blue-100" />
+              <ChevronRight size={14} className="text-green-200" />
             )}
           </button>
         </div>

@@ -80,7 +80,7 @@ const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
           <div className="w-8 h-8 rounded-md bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mr-2 shadow-green-glow">
             <span className="text-sm font-bold text-white">NL</span>
           </div>
-          <span className="text-lg font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+          <span className="text-lg font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
             NounLogic
           </span>
         </div>
