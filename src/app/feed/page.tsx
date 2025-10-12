@@ -3,6 +3,8 @@ import MainLayout from '@/components/layout/MainLayout';
 import Link from 'next/link';
 import FeedClient from './FeedClient';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Feed | NounLogic',
   description: 'Your social feed of updates from peers and groups',

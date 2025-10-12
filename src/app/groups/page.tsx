@@ -1,6 +1,8 @@
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Groups | NounLogic',
   description: 'Join and create communities',

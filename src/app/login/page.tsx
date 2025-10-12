@@ -1,5 +1,7 @@
 import { redirect } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Login | NounLogic',
   description: 'Sign in to your account',

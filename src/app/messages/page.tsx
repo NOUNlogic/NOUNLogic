@@ -1,6 +1,8 @@
 import MainLayout from '@/components/layout/MainLayout';
 import MessagesClient from './MessagesClient';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Messages | NounLogic',
   description: 'Direct messages with peers and groups',
