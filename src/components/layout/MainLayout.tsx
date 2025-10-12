@@ -21,11 +21,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       setIsMobile(mobile);
       
       // Auto-collapse sidebar on mobile, auto-expand on desktop
-      if (!mobile && !sidebarOpen) {
-        setSidebarOpen(true);
-      } else if (mobile && sidebarOpen) {
-        setSidebarOpen(false);
-      }
+      setSidebarOpen(!mobile);
     };
     
     // Set initial value
@@ -38,7 +34,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     return () => {
       window.removeEventListener('resize', checkIfMobile);
     };
-  }, [sidebarOpen]);
+  }, []);
   
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);

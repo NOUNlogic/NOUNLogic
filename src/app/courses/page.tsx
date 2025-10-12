@@ -1,6 +1,8 @@
 import React from 'react';
 import CoursesClient from './CoursesClient';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Courses | NounLogic',
   description: 'Browse and manage courses',

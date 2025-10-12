@@ -1,6 +1,8 @@
 import React from 'react';
 import InstitutionsClient from './InstitutionsClient';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Institutions | NounLogic',
   description: 'Browse and manage institutions',
